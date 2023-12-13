@@ -4,12 +4,12 @@ const User = require('./user')
 
 const catalogSchema = mongoose.Schema({
     "seller": {
-        type : Schema.Types.ObjectId,
+        type : mongoose.Schema.Types.ObjectId,
         ref : 'User'
     },
     "products": [
         {
-            type: Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref:'Product'
         }
     ]
