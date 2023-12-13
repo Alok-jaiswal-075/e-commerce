@@ -40,14 +40,20 @@ app.use(cookieParser())
 
 
 
-app.use('api/auth', authRoutes)
-app.use('api/buyer', buyerRoutes)
-app.use('api/seller', sellerRoutes)
+app.use('/api/auth', authRoutes)
+app.use('/api/buyer', buyerRoutes)
+app.use('/api/seller', sellerRoutes)
 
 
-app.use('/',(req,res)=>{
-    res.send("Hello World")
+// app.use('/',(req,res)=>{
+//     res.send("Hello World")
 
+// })
+
+app.use((err,req,res,next)=>{
+    const { statusCode = 500 } = err;
+    if (!err.message) err.message = 'Oh No, Something Went Wrong!'
+    res.status(statusCode).json({"msg":err.message})
 })
 
 
