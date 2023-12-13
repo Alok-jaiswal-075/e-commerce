@@ -14,21 +14,6 @@ const sellerRoutes = require('./api/seller')
 
 const port = process.env.PORT
 
-// const dbUrl = process.env.DB_URL
-
-// mongoose.set('useUnifiedTopology', true);
-
-// mongoose.connect(dbUrl,{
-//     // useCreateIndex:true,
-//     // useNewUrlParse: true,
-//     useUnifiedTopology: true
-// }).then(d=>{
-//     console.log("Mongodb connection successful!!")
-// }).catch(err=>{
-//     console.log("Mongodb connection error")
-//     console.log(err)
-// })
-
 connectDB()
 
 const app = express()
@@ -44,11 +29,6 @@ app.use('/api/auth', authRoutes)
 app.use('/api/buyer', buyerRoutes)
 app.use('/api/seller', sellerRoutes)
 
-
-// app.use('/',(req,res)=>{
-//     res.send("Hello World")
-
-// })
 
 app.use((err,req,res,next)=>{
     const { statusCode = 500 } = err;
