@@ -14,12 +14,17 @@ router.get('/list-of-sellers',isLoggedIn,catchAsync( async (req,res)=>{
     res.json(sellers)
 }))
 
+
+
 router.get('/seller-catalog/:seller_id',isLoggedIn, catchAsync(async (req,res)=>{
     const {seller_id} = req.params
-    const catalog = await Catalog.findOne({seller:seller_id}).exec()
+    const catalog = await Catalog.findOne({seller:seller_id}).populate('products')
 
-    res.json(catalog)
+    res.json(catalog.products)
 }))
+
+
+
 
 router.post('/create-order/:seller_id', isLoggedIn, isBuyer, catchAsync(async (req, res) => {
     const { seller_id } = req.params;
@@ -32,9 +37,16 @@ router.post('/create-order/:seller_id', isLoggedIn, isBuyer, catchAsync(async (r
     const seller = await User.findById(seller_id).populate('catalog').exec();
     const buyer = await User.findOne({username:req.user.username});
 
-    const sellerCatalog = seller.catalog.products.map(product => product.toString());
+    // console.log(seller)
 
-    const itemsNotInCatalog = items.filter(item => !sellerCatalog.includes(item.productId));
+    const catalog = await Catalog.findById(seller.catalog._id).populate('products').exec();
+
+    // console.log(catalog)
+
+    const sellerCatalog = catalog.products.map(product => product._id.toString()); 
+
+    const itemsNotInCatalog = items.filter(item => !sellerCatalog.includes(item._id.toString())); 
+
 
 
     if (itemsNotInCatalog.length > 0) {
