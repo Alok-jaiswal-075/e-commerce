@@ -6,7 +6,6 @@ This repository contains a set of REST API endpoints for an E-Commerce Marketpla
 
 Explore the API endpoints using [Postman](https://interstellar-firefly-189300.postman.co/workspace/New-Team-Workspace~fe1d3087-f1f4-4ffe-8ad1-de38c20d92fa/collection/23119763-97370699-92b6-4aa9-af81-74ce85178e8f?action=share&creator=23119763).
 
-
 ## Features
 
 - **Authentication**
@@ -79,4 +78,3 @@ Explore the API endpoints using [Postman](https://interstellar-firefly-189300.po
 ## License
 
 This project is licensed under the [MIT License](https://github.com/Alok-jaiswal-075/e-commerce/blob/main/LICENSE).
-EOF
