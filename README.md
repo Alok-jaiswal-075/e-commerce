@@ -59,7 +59,18 @@ Explore the API endpoints using [Postman](https://interstellar-firefly-189300.po
 
    - Create a \`.env\` file based on the provided \`.env.example\` file.
    - Set up necessary environment variables such as DB_URL, JWT_SECRET, PORT.
-4. **Run the Application:**
+
+4. **Test Login Credentials**
+
+   For testing purposes, you can use the following login credentials:
+   - **Buyer**
+     - Username: alok
+     - Password: 12345
+   - **Seller**
+     - Username: vivek
+     - Password: 12345
+
+5. **Run the Application:**
    \`\`\`bash
    npm start
    \`\`\`
@@ -78,3 +89,4 @@ Explore the API endpoints using [Postman](https://interstellar-firefly-189300.po
 ## License
 
 This project is licensed under the [MIT License](https://github.com/Alok-jaiswal-075/e-commerce/blob/main/LICENSE).
+

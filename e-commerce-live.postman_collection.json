@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "a14e977a-12fd-499c-a8f5-b81401a35f64",
+		"name": "e-commerce-live",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23119763",
+		"_collection_link": "https://interstellar-firefly-189300.postman.co/workspace/New-Team-Workspace~fe1d3087-f1f4-4ffe-8ad1-de38c20d92fa/collection/23119763-a14e977a-12fd-499c-a8f5-b81401a35f64?action=share&source=collection_link&creator=23119763"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"vivek\",\n    \"password\":\"12345\",\n    \"role\":\"seller\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce-api-ayvj.onrender.com/api/auth/register",
+					"protocol": "https",
+					"host": [
+						"e-commerce-api-ayvj",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"vivek\",\n    \"password\":\"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce-api-ayvj.onrender.com/api/auth/login",
+					"protocol": "https",
+					"host": [
+						"e-commerce-api-ayvj",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-of-sellers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce-api-ayvj.onrender.com/api/buyer/list-of-sellers",
+					"protocol": "https",
+					"host": [
+						"e-commerce-api-ayvj",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"buyer",
+						"list-of-sellers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "seller-catalog",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce-api-ayvj.onrender.com/api/buyer/seller-catalog/657a071d003d81aeadf6cb2f",
+					"protocol": "https",
+					"host": [
+						"e-commerce-api-ayvj",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"buyer",
+						"seller-catalog",
+						"657a071d003d81aeadf6cb2f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-catalog",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"name\":\"iphone\",\n        \"price\": 70000\n    },\n    {\n        \"name\":\"macbook\",\n        \"price\":100000\n    },\n    {\n        \"name\":\"type-c cable\",\n        \"price\":1000\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce-api-ayvj.onrender.com/api/seller/create-catalog",
+					"protocol": "https",
+					"host": [
+						"e-commerce-api-ayvj",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"seller",
+						"create-catalog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"_id\": \"657a25da42848d604800d588\",\n        \"name\": \"iphone\",\n        \"price\": 70000,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"657a25da42848d604800d589\",\n        \"name\": \"macbook\",\n        \"price\": 100000,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"657a25da42848d604800d58a\",\n        \"name\": \"type-c cable\",\n        \"price\": 1000,\n        \"__v\": 0\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce-api-ayvj.onrender.com/api/buyer/create-order/657a071d003d81aeadf6cb2f",
+					"protocol": "https",
+					"host": [
+						"e-commerce-api-ayvj",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"buyer",
+						"create-order",
+						"657a071d003d81aeadf6cb2f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getting orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce-api-ayvj.onrender.com/api/seller/orders",
+					"protocol": "https",
+					"host": [
+						"e-commerce-api-ayvj",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"seller",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
